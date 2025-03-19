@@ -1,0 +1,30 @@
+### Create Employee Request
+POST {{host}}/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "hiredAt": "2025-04-01T00:00:00+00:00",
+  "salary": 150
+}
+
+> {% client.global.set("last_created_employee_id", response.body.id); %}
+
+### Read Employee Request
+GET {{host}}/api/employees/{{last_created_employee_id}}
+
+### Update Employee Request
+PUT {{host}}/api/employees/{{last_created_employee_id}}
+Content-Type: application/json
+
+{
+  "id": {{last_created_employee_id}},
+  "firstName": "Den",
+  "lastName": "Joe",
+  "salary": 200
+}
+
+### Delete Employee Request
+DELETE {{host}}/api/employees/{{last_created_employee_id}}
