@@ -1,0 +1,41 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: "Company API"
+            description: "API documentation for Company API"
+            version: "1.0.0"
+        components:
+            schemas:
+                Employee:
+                    type: object
+                    properties:
+                        id:
+                            type: integer
+                            example: 1
+                        firstName:
+                            type: string
+                            example: "John"
+                        lastName:
+                            type: string
+                            example: "Doe"
+                        email:
+                            type: string
+                            example: "john@example.com"
+                        hiredAt:
+                            type: string
+                            format: date-time
+                            example: "2025-04-01T00:00:00+00:00"
+                        salary:
+                            type: number
+                            example: 150
+                        createdAt:
+                            type: string
+                            format: date-time
+                            example: "2025-04-01T12:00:00+00:00"
+                        updatedAt:
+                            type: string
+                            format: date-time
+                            example: "2025-04-02T15:30:00+00:00"
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
